@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <label for="imagem"  class="form-label">Imagem</label>
+                    <label for="imagem"  class="form-label">Imagem 1</label>
                     <input class="form-control" type="file" id="formFile" name="imagem" required>
                 </div>
                 <button type="Submit" class="btn button col-md-6 ">Salvar</button>
