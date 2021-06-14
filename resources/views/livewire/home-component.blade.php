@@ -8,41 +8,6 @@
                 <h1>Mude a sua forma de comprar imóveis </h1>
             </div>
         </div>
-
-        <div class="row icon-boxes">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box">
-                    <div class="icon"><i class="ri-stack-line"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                    <div class="icon"><i class="ri-palette-line"></i></div>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon-box">
-                    <div class="icon"><i class="ri-command-line"></i></div>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
-                <div class="icon-box">
-                    <div class="icon"><i class="ri-fingerprint-line"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                </div>
-            </div>
-
-        </div>
     </div>
 </section><!-- End Hero -->
 
@@ -56,15 +21,15 @@
 
                 <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
-                        <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
-                        <p>Happy Clients</p>
+                        <span data-purecounter-start="0" data-purecounter-end="102" data-purecounter-duration="2" class="purecounter"></span>
+                        <p>Clientes satisfeitos</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
-                        <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
-                        <p>Projects</p>
+                        <span data-purecounter-start="0" data-purecounter-end="{{$imoveis_count}}" data-purecounter-duration="2" class="purecounter"></span>
+                        <p>Imoveis cadastrados</p>
                     </div>
                 </div>
 
@@ -93,7 +58,7 @@
 
             <div class="section-title">
                 <h2>Imóveis</h2>
-            
+
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="150">
@@ -110,21 +75,24 @@
                 @foreach($imoveis as $imovel)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-{{$imovel->operacao}}">
                     <a href="{{route('imoveis.details',['id_imovel'=>$imovel->id])}}">
-                        <div class="portfolio-wrap">
-                            <img src="{{ asset('assets/img/imoveis') }}/{{$imovel->image}}" class="img-fluid" alt="{{$imovel->cidade}}">
-                            <div class="portfolio-info">
-                                <h4>{{$imovel->cidade}} - {{$imovel->bairro}}</h4>
-                                <p>{{$imovel->operacao}}</p>
-                                <div class="portfolio-links">
-                                    <a href="{{ asset('assets/img/imoveis') }}/{{$imovel->image}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$imovel->cidade}} - {{$imovel->bairro}}">
-                                        <i class="bx bx-plus"></i>
-                                    </a>
-                                    <a href="portfolio-details.html" title="More Details">
-                                        <i class="bx bx-link"></i>
-                                    </a>
+                        <div class="card shadow-lg">
+                            <div class="portfolio-wrap">
+                                <img src="{{ asset('assets/img/imoveis') }}/{{$imovel->image}}" class="img-fluid shadow rounded" alt="{{$imovel->cidade}}">
+                                <div class="portfolio-info">
+                                    <h4>{{$imovel->cidade}} - {{$imovel->bairro}}</h4>
+                                    <p>{{$imovel->operacao}}</p>
+                                    <div class="portfolio-links">
+                                        <a href="{{ asset('assets/img/imoveis') }}/{{$imovel->image}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$imovel->cidade}} - {{$imovel->bairro}}">
+                                            <i class="bx bx-plus"></i>
+                                        </a>
+                                        <a href="portfolio-details.html" title="More Details">
+                                            <i class="bx bx-link"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </a>
                 </div>
                 @endforeach
@@ -202,13 +170,12 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Contact</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Contato</h2>
             </div>
 
             <div>
                 <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29940.018497992434!2d-50.27232163385913!3d-20.279465280166928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9497f61cb7d933ed%3A0xd182f4e7894f751b!2sFernand%C3%B3polis%2C%20SP%2C%2015600-000!5e0!3m2!1spt-BR!2sbr!4v1622763151428!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen></iframe>
-                
+
             </div>
 
             <div class="row mt-5">

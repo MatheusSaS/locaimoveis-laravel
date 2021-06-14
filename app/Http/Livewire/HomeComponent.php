@@ -10,8 +10,10 @@ class HomeComponent extends Component
 {
     use WithPagination;
     public function render()
-    {
+    {        
         $imoveis = Imoveis::paginate(12);
-        return view('livewire.home-component',['imoveis'=>$imoveis])->layout('layouts.base');
+        $imoveis_count = Imoveis::count();
+        return view('livewire.home-component',['imoveis'=>$imoveis,
+                                               'imoveis_count'=>$imoveis_count])->layout('layouts.base');
     }
 }

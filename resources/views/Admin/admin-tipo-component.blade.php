@@ -28,7 +28,7 @@
                 <tr>
                     <th class="text-left">#</th>
                     <th class="text-left">Nome</th>
-                    <th class="text-left">Ações</th>
+                    <th class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody class="table-hover">
@@ -50,4 +50,5 @@
         </table>
     </div>
 </div>
+<section class="py-10 text-center container"></section>
 @endsection

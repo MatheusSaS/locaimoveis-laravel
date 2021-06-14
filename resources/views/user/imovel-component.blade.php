@@ -69,4 +69,5 @@
     </div>
 
 </div>
+<section class="py-10 text-center container"></section>
 @endsection

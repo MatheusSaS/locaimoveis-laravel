@@ -15,11 +15,9 @@ class DetailsComponent extends Component
         $this->id = $id_imovel;
     }
     public function render()
-    {
-        $id_user = Auth::id();
-        $user = User::find($id_user);
-
+    {        
         $imovel = Imoveis::where('id',$this->id)->first();
+        $user = User::find($imovel->USER_ID);
 
         $tipo = Tipo::find($imovel->tipo_id);
         return view('livewire.details-component',['imoveis'=>$imovel,

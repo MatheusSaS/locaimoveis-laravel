@@ -52,7 +52,6 @@
               <li class="dropdown"><a href="#"><i class="fas fa-user"></i><span class="ml-5">{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="/meus_imoveis">Meus Imoveis</a></li>
-                  <li><a href="{{route('admin.dashboard')}}">Painel Administrativo</a></li>
                   <li><a href="/admin/tipo">Tipos de imoveis</a></li>
                   <li><a href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                   <form id="logout-form" method="POST" action="{{ route('logout') }}">   
@@ -110,8 +109,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Contactar</h4>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
